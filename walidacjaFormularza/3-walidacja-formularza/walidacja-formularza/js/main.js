@@ -41,14 +41,22 @@ console.log(wszystkieZgody);
 console.log(wszystkieCheckboxy);
 
 
+/*
 
-wszystkieZgody.addEventListener( 'click', function(e){
-if (wszystkieZgody.checked == true ) {
-    console.log("checked");
-} 
-else {
-    console.log("false");
+wszystkieZgody.addEventListener('click', function (e) {
+    if (wszystkieZgody.checked == true) {
+        console.log("checked");
+    } else {
+        console.log("false");
+    }
+
+});*/
+
+wszystkieZgody.onchange = function(){
+    console.log('klikniety');
+    if (this.checked == true) {
+        console.log("checked");
+    } else {
+        console.log("false");
+    }
 }
-
-} );
-
