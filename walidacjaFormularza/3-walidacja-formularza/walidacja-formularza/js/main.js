@@ -82,14 +82,21 @@ wszystkieZgody.onchange = stanCheckboxa;
 }*/
 
 function walidujFormularz(event) {
-    event.preventDefault();    
+    
     
     if (inputImie.value.trim() == "") {
         console.log('pole jest puste');
+        event.preventDefault();  
     }
     
     if (inputEmail.value.trim() == "") {
         console.log('pole email jest puste');
+        event.preventDefault();  
+    }
+    
+    if (! zgodaMarketingowa1.checked) {
+        console.log("zgoda marketingowa 1 niezaznaczona");
+        event.preventDefault();  
     }
 }
 
