@@ -84,7 +84,7 @@ wszystkieZgody.onchange = stanCheckboxa;
 function walidujFormularz(event) {
     event.preventDefault();    
     
-    if (inputImie.value == "") {
+    if (inputImie.value.trim() == "") {
         console.log('pole jest puste');
     }
 }
