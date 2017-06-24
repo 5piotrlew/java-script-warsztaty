@@ -37,6 +37,9 @@ var wszystkieZgody = document.getElementById("wszystkie-zgody");
 
 var wszystkieCheckboxy = document.querySelectorAll("input[type=checkbox]");
 
+var zgodaMarketingowa1 = document.getElementById("zgoda-marketingowa-1");
+var zgodaMarketingowa2 = document.getElementById("zgoda-marketingowa-2");
+
 console.log(wszystkieZgody);
 console.log(wszystkieCheckboxy);
 
@@ -52,7 +55,13 @@ wszystkieZgody.addEventListener('click', function (e) {
 
 });*/
 
-wszystkieZgody.onchange = function(){
+function stanCheckboxa() {
+    zgodaMarketingowa2.checked = this.checked;
+}
+
+wszystkieZgody.onchange = stanCheckboxa;
+
+/*wszystkieZgody.onchange = function(){
     console.log('klikniety');
     if (this.checked == true) {
         console.log("checked");
@@ -61,4 +70,4 @@ wszystkieZgody.onchange = function(){
         console.log("false");
         document.getElementById("zgoda-marketingowa-2").checked = false;
     }
-}
+}*/
