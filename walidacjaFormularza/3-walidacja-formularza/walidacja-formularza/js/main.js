@@ -90,6 +90,8 @@ function walidujFormularz(event) {
     if (inputImie.value.trim() == "") {
     wiadomosc.innerHTML = "Wpisz imię!";
         event.preventDefault();  
+    } else {
+        wiadomosc.innerHTML = "";
     }
     
     if (inputEmail.value.trim() == "") {
