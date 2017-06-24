@@ -45,6 +45,8 @@ var wyslijBtn = document.getElementById("wyslij");
 var inputImie = document.getElementById("name");
 var inputEmail = document.getElementById("email");
 
+var message = document.getElementById("wiadomosc");
+
 console.log(wszystkieZgody);
 console.log(wszystkieCheckboxy);
 
@@ -83,9 +85,10 @@ wszystkieZgody.onchange = stanCheckboxa;
 
 function walidujFormularz(event) {
     
+
     
     if (inputImie.value.trim() == "") {
-        console.log('pole jest puste');
+    wiadomosc.innerHTML = "Wpisz imię!";
         event.preventDefault();  
     }
     
