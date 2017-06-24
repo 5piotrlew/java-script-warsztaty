@@ -40,6 +40,11 @@ var wszystkieCheckboxy = document.querySelectorAll("input[type=checkbox]");
 var zgodaMarketingowa1 = document.getElementById("zgoda-marketingowa-1");
 var zgodaMarketingowa2 = document.getElementById("zgoda-marketingowa-2");
 
+var wyslijBtn = document.getElementById("wyslij");
+
+var inputImie = document.getElementById("name");
+var inputEmail = document.getElementById("email");
+
 console.log(wszystkieZgody);
 console.log(wszystkieCheckboxy);
 
@@ -75,3 +80,14 @@ wszystkieZgody.onchange = stanCheckboxa;
         document.getElementById("zgoda-marketingowa-2").checked = false;
     }
 }*/
+
+function walidujFormularz(event) {
+    event.preventDefault();    
+    
+    if (inputImie.value == "") {
+        console.log('pole jest puste');
+    }
+}
+
+
+wyslijBtn.addEventListener('click', walidujFormularz);
