@@ -87,6 +87,10 @@ function walidujFormularz(event) {
     if (inputImie.value.trim() == "") {
         console.log('pole jest puste');
     }
+    
+    if (inputEmail.value.trim() == "") {
+        console.log('pole email jest puste');
+    }
 }
 
 
