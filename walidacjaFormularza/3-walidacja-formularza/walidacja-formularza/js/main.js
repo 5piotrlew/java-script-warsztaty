@@ -56,7 +56,11 @@ wszystkieZgody.addEventListener('click', function (e) {
 });*/
 
 function stanCheckboxa() {
+    zgodaMarketingowa1.checked = this.checked;
     zgodaMarketingowa2.checked = this.checked;
+    
+    zgodaMarketingowa1.disabled = this.checked;
+    zgodaMarketingowa2.disabled = this.checked;
 }
 
 wszystkieZgody.onchange = stanCheckboxa;
