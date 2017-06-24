@@ -45,7 +45,7 @@ var wyslijBtn = document.getElementById("wyslij");
 var inputImie = document.getElementById("name");
 var inputEmail = document.getElementById("email");
 
-var message = document.getElementById("wiadomosc");
+var wiadomosc = document.getElementById("wiadomosc");
 
 console.log(wszystkieZgody);
 console.log(wszystkieCheckboxy);
@@ -65,7 +65,7 @@ wszystkieZgody.addEventListener('click', function (e) {
 function stanCheckboxa() {
     zgodaMarketingowa1.checked = this.checked;
     zgodaMarketingowa2.checked = this.checked;
-    
+
     zgodaMarketingowa1.disabled = this.checked;
     zgodaMarketingowa2.disabled = this.checked;
 }
@@ -84,26 +84,31 @@ wszystkieZgody.onchange = stanCheckboxa;
 }*/
 
 function walidujFormularz(event) {
-    
+
+   wiadomosc.innerHTML = '<ul id="wiadomosc"></ul>';
 
     
     if (inputImie.value.trim() == "") {
-    wiadomosc.innerHTML = "Wpisz imię!";
-        event.preventDefault();  
-    } else {
-        wiadomosc.innerHTML = "";
-    }
-    
-    if (inputEmail.value.trim() == "") {
-        console.log('pole email jest puste');
-        event.preventDefault();  
-    }
-    
-    if (! zgodaMarketingowa1.checked) {
-        console.log("zgoda marketingowa 1 niezaznaczona");
-        event.preventDefault();  
-    }
-}
+        var msgImie = document.createElement("li");
+        msgImie.innerHTML = "wpisz imie!";
+        wiadomosc.appendChild(msgImie);
 
+        event.preventDefault();
+    } 
+
+    if (inputEmail.value.trim() == "") {
+        var msgEmail = document.createElement("li");
+        msgEmail.innerHTML = "wpisz email!";
+        wiadomosc.appendChild(msgEmail);
+        
+        event.preventDefault();
+    } 
+
+    if (! zgodaMarketingowa1.checked) {
+        var msgZgodaMarketingowa1 = document.createElement("li");
+        msgZgodaMarketingowa1.innerHTML = "nie wyraziles zgody!";
+        wiadomosc.appendChild(msgZgodaMarketingowa1);
+    } 
+}
 
 wyslijBtn.addEventListener('click', walidujFormularz);
