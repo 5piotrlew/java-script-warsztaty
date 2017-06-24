@@ -56,7 +56,9 @@ wszystkieZgody.onchange = function(){
     console.log('klikniety');
     if (this.checked == true) {
         console.log("checked");
+        document.getElementById("zgoda-marketingowa-2").checked = true;
     } else {
         console.log("false");
+        document.getElementById("zgoda-marketingowa-2").checked = false;
     }
 }
